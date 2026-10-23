@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdint.h>
 
-#define NUMSTEPS 20000000
+#define NUMSTEPS 1000000
 
 int main(int argc, char *argv[]){
         int i;
@@ -50,17 +50,23 @@ int main(int argc, char *argv[]){
                 }
 
 
+	//calculate pi
         pi = step * final_sum;
+
+	//stop timer
         clock_gettime(CLOCK_MONOTONIC, &end);
 
         uint64_t diff = 1000000000ULL * (end.tv_sec - start.tv_sec) + end.tv_nsec - start.tv_nsec;
 
 
+	//print pi & execution time
         printf("PI is %.20f\n", pi);
         printf("elapsed time = %llu nanoseconds \n", (unsigned long long)diff);
 
         }
 
+	//end MPI environment
         MPI_Finalize();
         return 0;
 }
+
