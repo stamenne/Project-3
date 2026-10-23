@@ -4,7 +4,7 @@
 #include <time.h>
 #include <stdint.h>
 
-#define NUMSTEPS 1000000
+#define NUMSTEPS 20000000
 
 int main(int argc, char *argv[]){
         int i;
